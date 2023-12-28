@@ -45,3 +45,17 @@ limit 10;
 --  7.1 Retrieve all actors with the first name "SCARLETT".
 select * from sakila.actor
 where first_name='SCARLETT';
+
+
+/* BONUS:
+7.2 Retrieve all movies that have ARMAGEDDON in their title and have a duration longer than 100 minutes. Hint: use LIKE operator. 
+7.3 Determine the number of films that include Behind the Scenes content
+*/
+
+select * 
+from film
+where title like '%ARMAGEDDON%' and length > 100;
+
+select count(film_id) as number_of_films
+from film
+where special_features like '%Behind the scenes%';

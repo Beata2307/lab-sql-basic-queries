@@ -34,10 +34,10 @@ select count(*) as available_films from sakila.inventory;
 select count(*) rented_films from sakila.rental;
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
-select distinct last_name from sakila.actor;
+select count(distinct last_name) as distinct_last_names from sakila.actor;
 
 -- 6. Retrieve the 10 longest films.
-select distinct length from sakila.film 
+select distinct title, length from sakila.film 
 order by length desc
 limit 10;
 
